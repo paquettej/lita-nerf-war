@@ -3,10 +3,10 @@ Gem::Specification.new do |spec|
   spec.version       = "0.0.1"
   spec.authors       = ["Jeff Paquette"]
   spec.email         = ["jeff@snowmoonsoftware.com"]
-  spec.description   = "TODO: Add a description"
-  spec.summary       = "TODO: Add a summary"
-  spec.homepage      = "TODO: Add a homepage"
-  spec.license       = "TODO: Add a license"
+  spec.description   = "Virtual dart fights for your slack rooms"
+  spec.summary       = "Virtual dart fights for your slack rooms"
+  spec.homepage      = "https://github.com/snowmoonsoftware/lita-nerf-war"
+  spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
   spec.files         = `git ls-files`.split($/)
