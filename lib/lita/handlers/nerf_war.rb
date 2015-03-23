@@ -19,7 +19,7 @@ module Lita
       
       def nuke(response)
         set_params(response)        
-        ::NerfWar.new(response, self.target, self.weapon).nuke
+        ::NerfWar.new(response, self.target, self.weapon, config.custom_message_chance).nuke
       end
       
       def set_params(response)
