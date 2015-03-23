@@ -1,18 +1,9 @@
 class NerfWar
   
-  # set targets_for_eric { "and hits her in the forehead!" "ooooh THERE'S another free lunch!" " aaand THERE's another HR violation" "Never gonna give you up, Never gonna let you down,\
-  #  Never gonna run around and desert you..." }
-  #
-  # set targets_for_todd { "peers through scope, adjusts for windage, exhales and holds still...HIT!" "dons Ghillie suit and is never seen again." "HIT! Hands them a tourniquet" "norma\
-  # l"}
-  #
-  # set targets_for_jennifer {"... wait, I don't always shoot at Jeff, but when I do I usually miss... and misses!"}
-  # set targets_for_jennifer_eric {"pew pew!" " right in the... oooh ouch" "and cringes in horror"}
-
   BURN_UNITS = 'http://en.wikipedia.org/wiki/List_of_burn_centers_in_the_United_States'
-  FLAME_WEAPONS = ['flamethrower',  'napalm', 'willy pete', 'willie pete'] 
+  FLAME_WEAPONS = ['flamethrower', 'flame thrower' 'napalm', 'willy pete', 'willie pete'] 
   
-  def initialize(response, target, weapon)
+  def initialize(response, target, weapon, custom_message_chance)
     @response = response
     @user = @response.user
     @target = target
@@ -22,13 +13,11 @@ class NerfWar
     @generic_targets = I18n.translate('lita.handlers.nerf_war.targets')
   end
   
-  def nerf
-    
+  def nerf    
     return if you_will_put_your_eye_out?
     return if we_never_forget_vlad?
-    return if eric_always_misses?
     
-    @response.reply shooting_message + snarky_result   
+    @response.reply shooting_message + ': ' +  snarky_result   
     @response.reply BURN_UNITS if is_flame_weapon?
   end
   
@@ -37,21 +26,25 @@ class NerfWar
   end
   
   def snarky_result
-    ' and ' + @generic_targets[rand(@generic_targets.length)]    
+    targets = nil
+    snarky_user_messages = I18n.translate("lita.handlers.nerf_war.specific_targets.#{@user.name}".downcase)
+
+    targets = snarky_user_messages[@target.to_sym] if snarky_user_messages[@target.to_sym].length > 0 rescue nil
+    targets ||= snarky_user_messages[:default] if snarky_user_messages[:default].length > 0 && use_custom_default? rescue nil
+    targets ||= @generic_targets
+    
+    snarky_message = targets[rand(targets.length)]
   end
-  
+    
   def shooting_message
     "#{@user.name} shoots #{@weapon} at #{@target}"
   end
   
-  def eric_always_misses?
-    if @user.name.downcase.start_with?('eric') && @target.downcase == 'jeff'
-      @response.reply "#{shooting_message}... and misses!"
-      return true
-    end
-    false
+  # chance to use a per-user default message
+  def use_custom_default?
+    rand(100) < custom_message_chance
   end
-  
+    
   def we_never_forget_vlad?
     if @target.downcase == 'vlad'    
       @response.reply [shooting_message, "http://www.quickmeme.com/img/22/221f53ddeb8084c01d4d50c966df793d30b8392c68b7cb0a5ec50a635e01cff2.jpg"]

@@ -2,19 +2,19 @@ module Lita
   module Handlers
     class NerfWar < Handler
       
-      def self.default_config(config)
-        # config.command_only = true
-      end
+      config :target_file, type: String, required: false
+      config :custom_message_chance, type: Integer, required: false, default: 50 
       
       attr_accessor :target
       attr_accessor :weapon
 
       route %r{nerf\s(\w+)\s*(.*)}i, :nerf, help: { "nerf <user>..." => "shoots user with a virtual dart"}
       route %r{nuke\s(\w+)\s*(.*)}i, :nuke, help: { "nuke <user>..." => "for those really bad days"}
-            
+
       def nerf(response)
+        Lita.load_locales config.target_file unless config.target_file.nil?        
         set_params(response)
-        ::NerfWar.new(response, self.target, self.weapon).nerf()
+        ::NerfWar.new(response, self.target, self.weapon, config.custom_message_chance).nerf()
       end
       
       def nuke(response)
