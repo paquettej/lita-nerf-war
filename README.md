@@ -1,6 +1,6 @@
 # lita-nerf-war
 
-Nerf guns at work are great. Want to get someone's attention? Shoot them with a dart -- tt works great. But eventually someone complains and the dart guns end up in a drawer somewhere. End of the fun right? Wrong! 
+Nerf guns at work are great. Want to get someone's attention? Shoot them with a dart -- it works great. But eventually someone complains and the dart guns end up in a drawer somewhere. End of the fun right? Wrong! 
 Virtualization isn't just for servers any longer. Now you can virtualize your nerf war too!
 
 
@@ -14,7 +14,7 @@ gem "lita-nerf-war"
 
 ## Configuration
 
-You don't need to configure anything to have your very own nerf war but where's the fun in that? While lita-nerf-war does provide an initial set of snarky results, you can increase the fun factor by customizing the messages by specifying your own set of messages.
+You don't need to configure anything to have your very own nerf war but where's the fun in that? While ```lita-nerf-war``` does provide an initial set of snarky results, you can increase the fun factor by customizing the messages by specifying your own set of messages.
 
 Create a yaml file within your bot's directory structure and set ```config.handlers.nerf_war.target_file``` to the full path to that file: 
 
@@ -68,20 +68,21 @@ Note that ```someuser``` is a person's [Slack](https://slack.com/) username, whi
 
 In a channel where your Lita bot is a member, the command ```nerf <user>```, and your bot will reply with a shooting message and a snarky result:
   
-  ```nerf stewart```
+```nerf stewart```
   
 will produce something like:
-  ```<your user name> shoots a dart at Stewart: gun jammed```
+
+```<your user name> shoots a dart at Stewart: gun jammed```
     
 You can also specify your favorite shooting device:
 
-    ```nerf joe with a bazooka```
+```nerf joe with a bazooka```
   
 will produce something like:
 
-    ```<your user name> shoots a bazooka at joe: ouch right in the eye!```
+```<your user name> shoots a bazooka at joe: ouch right in the eye!```
     
 For those really intense fire fights,  you can throw a nuke:
 
-      ```nuke everyone```
+```nuke everyone```
       
