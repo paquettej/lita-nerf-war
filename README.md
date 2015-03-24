@@ -14,7 +14,7 @@ gem "lita-nerf-war"
 
 ## Configuration
 
-You don't need to configure anything to have your very own nerf war but where's the fun in that? While ```lita-nerf-war``` does provide an initial set of snarky results, you can increase the fun factor by customizing the messages by specifying your own set of messages.
+You don't need to configure anything to have a hyperlocal nerf war but where's the fun in that? While ```lita-nerf-war``` does provide an initial set of snarky results, you can increase the fun factor by customizing the messages by specifying your own set of messages.
 
 Create a yaml file within your bot's directory structure and set ```config.handlers.nerf_war.target_file``` to the full path to that file: 
 
@@ -85,4 +85,42 @@ will produce something like:
 For those really intense fire fights,  you can throw a nuke:
 
 ```nuke everyone```
+      
+
+## History
+
+0.1.3 Specified ruby version in gemspec
+
+0.1.2 Initial public release
+
+0.0.1 Very late night hacking sessions
+
+0.0.0 this was a TCL script? WTF? Who does THAT?
+      
+## Contributing
+
+Contributions are welcome! Here's a quick guide shamelessly cobbled together from other projects:
+
+Fork, then clone the repo:
+
+    git clone git@github.com:your-username/lita-nerf-war.git
+
+Make your change. Add tests for your change. Make the tests pass:
+
+    rake
+
+Push to your fork and [submit a pull request][pr].
+
+[pr]: https://github.com/snowmoonsoftware/lita-nerf-war/compare/
+
+At this point you're waiting on me. I like to at least comment on pull requests
+within three business days (and, typically, one business day). I may suggest
+some changes or improvements or alternatives.
+
+Some things that will increase the chance that your pull request is accepted:
+
+* Write tests.
+* Write a [good commit message][commit].
+
+[commit]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
       
