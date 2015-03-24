@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/lita-nerf-war.svg)](http://badge.fury.io/rb/lita-nerf-war)
+
 # lita-nerf-war
 
 Nerf guns at work are great. Want to get someone's attention? Shoot them with a dart -- it works great. But eventually someone complains and the dart guns end up in a drawer somewhere. End of the fun right? Wrong! 
