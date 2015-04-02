@@ -2,7 +2,7 @@
 
 # lita-nerf-war
 
-Nerf guns at work are great. Want to get someone's attention? Shoot them with a dart -- it works great. But eventually someone complains and the dart guns end up in a drawer somewhere. End of the fun right? Wrong! 
+Nerf guns at work are great. Want to get someone's attention? Shoot them with a dart -- it works great. But eventually someone complains and the dart guns end up in a drawer somewhere. End of the fun, right? Wrong! 
 Virtualization isn't just for servers any longer. Now you can virtualize your nerf war too!
 
 
@@ -90,6 +90,8 @@ For those really intense fire fights,  you can throw a nuke:
       
 
 ## History
+
+0.1.4 Added a 5-shot gatling gun. Triggered if the text after the target (e.g. 'with a ...') contains the word 'gatling'
 
 0.1.3 Specified ruby version in gemspec
 

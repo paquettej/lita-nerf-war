@@ -1,10 +1,10 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-nerf-war"
-  spec.version       = "0.1.3"
+  spec.version       = "0.1.4"
   spec.authors       = ["Jeff Paquette"]
   spec.email         = ["jeff@snowmoonsoftware.com"]
   spec.description   = "Virtual dart fights for your slack rooms"
-  spec.summary       = "Virtual dart fights for your slack rooms"
+  spec.summary       = "Nerf guns at work are great. Want to get someone's attention? Shoot them with a dart -- it works great. But eventually someone complains and the dart guns end up in a drawer somewhere. End of the fun, right? Wrong! Virtualization isn't just for servers any longer. Now you can virtualize your nerf war too!"
   spec.homepage      = "https://github.com/snowmoonsoftware/lita-nerf-war"
   spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }

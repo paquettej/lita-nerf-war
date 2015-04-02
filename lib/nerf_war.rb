@@ -17,8 +17,11 @@ class NerfWar
     return if you_will_put_your_eye_out?
     return if we_never_forget_vlad?
     
-    @response.reply shooting_message + ': ' +  snarky_result   
-    @response.reply BURN_UNITS if is_flame_weapon?
+    shots = @weapon.downcase.include?('gatling') ? 5 : 1
+    1.upto(shots) do
+      @response.reply shooting_message + ': ' +  snarky_result   
+      @response.reply BURN_UNITS if is_flame_weapon?
+    end
   end
   
   def nuke
