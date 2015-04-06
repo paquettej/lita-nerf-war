@@ -25,6 +25,7 @@ module Lita
       def set_params(response)
         self.target = response.matches[0][0]
         self.weapon = response.matches[0][1]
+        self.weapon.slice!('with a ') if self.weapon.start_with?('with a ')
         self.weapon.slice!('with ') if self.weapon.start_with?('with ')
       end
     end

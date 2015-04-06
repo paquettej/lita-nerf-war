@@ -91,6 +91,7 @@ For those really intense fire fights,  you can throw a nuke:
 
 ## History
 
+0.1.5 Fixed weapon name detection. Now handles 'with a ' as well as 'with '
 0.1.4 Added a 5-shot gatling gun. Triggered if the text after the target (e.g. 'with a ...') contains the word 'gatling'
 
 0.1.3 Specified ruby version in gemspec
