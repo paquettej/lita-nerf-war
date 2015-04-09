@@ -2,6 +2,7 @@ class NerfWar
   
   BURN_UNITS = 'http://en.wikipedia.org/wiki/List_of_burn_centers_in_the_United_States'
   FLAME_WEAPONS = ['flamethrower', 'flame thrower' 'napalm', 'willy pete', 'willie pete'] 
+  SCRUM_BUTS = ['scrum but', 'scrum butt', 'scrumbut', 'scrum-but', 'scrum-butt']
   
   def initialize(response, target, weapon, custom_message_chance)
     @response = response
@@ -16,6 +17,7 @@ class NerfWar
   def nerf    
     return if you_will_put_your_eye_out?
     return if we_never_forget_vlad?
+    return if we_always_do_scrum_buts?
     
     shots = @weapon.downcase.include?('gatling') ? 5 : 1
     1.upto(shots) do
@@ -51,6 +53,14 @@ class NerfWar
   def we_never_forget_vlad?
     if @target.downcase == 'vlad'    
       @response.reply [shooting_message, "http://www.quickmeme.com/img/22/221f53ddeb8084c01d4d50c966df793d30b8392c68b7cb0a5ec50a635e01cff2.jpg"]
+      return true
+    end
+    false
+  end
+  
+  def we_always_do_scrum_buts?
+    if SCRUM_BUTS.include? @weapon.downcase
+      @response.reply [shooting_message, "http://cdn.meme.am/instances/56730653.jpg"]
       return true
     end
     false
