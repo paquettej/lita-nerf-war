@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-nerf-war"
-  spec.version       = "0.1.5"
+  spec.version       = "0.1.6"
   spec.authors       = ["Jeff Paquette"]
   spec.email         = ["jeff@snowmoonsoftware.com"]
   spec.description   = "Virtual dart fights for your slack rooms"

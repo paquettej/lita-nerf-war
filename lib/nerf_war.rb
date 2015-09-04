@@ -1,8 +1,7 @@
 class NerfWar
   
-  BURN_UNITS = 'http://en.wikipedia.org/wiki/List_of_burn_centers_in_the_United_States'
+  BURN_UNITS = ['http://en.wikipedia.org/wiki/List_of_burn_centers_in_the_United_States', 'http://www.webmd.com/first-aid/tc/home-treatment-for-second-degree-burns-topic-overview']
   FLAME_WEAPONS = ['flamethrower', 'flame thrower' 'napalm', 'willy pete', 'willie pete'] 
-  SCRUM_BUTS = ['scrum but', 'scrum butt', 'scrumbut', 'scrum-but', 'scrum-butt']
   
   def initialize(response, target, weapon, custom_message_chance)
     @response = response
@@ -17,17 +16,16 @@ class NerfWar
   def nerf    
     return if you_will_put_your_eye_out?
     return if we_never_forget_vlad?
-    return if we_always_do_scrum_buts?
     
     shots = @weapon.downcase.include?('gatling') ? 5 : 1
     1.upto(shots) do
       @response.reply shooting_message + ': ' +  snarky_result   
-      @response.reply BURN_UNITS if is_flame_weapon?
+      @response.reply BURN_UNITS[rand(BURN_UNITS.length)] if is_flame_weapon?
     end
   end
   
   def nuke
-    @response.reply ["#{@user.name} tosses a nuke into the room", "http://www.dudeiwantthat.com/omg/fools/nerf-nuke-12043.jpg"]
+    @response.reply ["#{@user.name} tosses a nuke into the room", "http://i.imgur.com/zNAAKqd.gif"]
   end
   
   def snarky_result
@@ -57,15 +55,7 @@ class NerfWar
     end
     false
   end
-  
-  def we_always_do_scrum_buts?
-    if SCRUM_BUTS.include? @weapon.downcase
-      @response.reply [shooting_message, "http://cdn.meme.am/instances/56730653.jpg"]
-      return true
-    end
-    false
-  end
-  
+    
   def you_will_put_your_eye_out?
     if is_self?
       @response.reply "You'll put your eye out!"
