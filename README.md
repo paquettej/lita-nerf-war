@@ -91,6 +91,8 @@ For those really intense fire fights,  you can throw a nuke:
 
 ## History
 
+0.1.7 Too many looks of disapproval when our beloved nerf bot chimed in during general nerf talk brings this update to you. Now you need to type ```!nerf``` or ```!nuke``` to invoke the virtual nerfs.
+
 0.1.6 Replaced nerf nuke image as source image was taken down. Removed 'scrum but' code to another plugin
 
 0.1.5 Fixed weapon name detection. Now handles 'with a ' as well as 'with '

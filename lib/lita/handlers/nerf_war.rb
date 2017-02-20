@@ -8,8 +8,8 @@ module Lita
       attr_accessor :target
       attr_accessor :weapon
 
-      route %r{nerf\s(\w+)\s*(.*)}i, :nerf, help: { "nerf <user>..." => "shoots user with a virtual dart"}
-      route %r{nuke\s(\w+)\s*(.*)}i, :nuke, help: { "nuke <user>..." => "for those really bad days"}
+      route %r{!nerf\s(\w+)\s*(.*)}i, :nerf, help: { "!nerf <user>..." => "shoots user with a virtual dart"}
+      route %r{!nuke\s(\w+)\s*(.*)}i, :nuke, help: { "!nuke <user>..." => "for those really bad days"}
 
       def nerf(response)
         Lita.load_locales config.target_file unless config.target_file.nil?        
